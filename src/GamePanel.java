@@ -13,7 +13,7 @@ public class GamePanel extends JPanel implements Runnable {
     public terrain2D terrain;
     public PerlinNoise perlinNoise;
     Graphics2D g2d;
-    public final int FPS = 120;
+    public final int FPS = 30;
     public boolean canRun = false;
 
     public void startGameThread() {
@@ -60,7 +60,7 @@ public class GamePanel extends JPanel implements Runnable {
                     delta = 0;
                     drawCount++;
                     //terrain.draw(g2d); // Remove this line, as drawing should be handled in paintComponent
-                    repaint(); // Render the graphics context to the screen
+                     // Render the graphics context to the screen
                 }
                 if (timer >= 1000000000) {
                     //System.out.println("FPS: " + drawCount);

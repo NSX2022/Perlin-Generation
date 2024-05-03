@@ -19,29 +19,30 @@ public class KeyHandler implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if(e.getKeyCode() == KeyEvent.VK_ENTER){
-            //regen grid
-            gp.seed = rand.nextLong(100000000, 999999999);
-            gp.terrain.genTerrain();
-            System.out.println("Regenerated");
-        }
+
         if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
             System.exit(0);
         }
-        if(e.getKeyCode() == KeyEvent.VK_EQUALS){
+        if(e.getKeyCode() == KeyEvent.VK_EQUALS && gp.terrain.tileSize <= 800){
             gp.terrain.tileSize++;
             gp.terrain.genTerrain();
-            System.out.println(gp.terrain.tileSize);
+            //System.out.println(gp.terrain.tileSize);
         }
-        if(e.getKeyCode() == KeyEvent.VK_MINUS && gp.terrain.tileSize >= 3){
+        if(e.getKeyCode() == KeyEvent.VK_MINUS && gp.terrain.tileSize >= 2){
             gp.terrain.tileSize--;
             gp.terrain.genTerrain();
-            System.out.println(gp.terrain.tileSize);
+            //System.out.println(gp.terrain.tileSize);
         }
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
+        if(e.getKeyCode() == KeyEvent.VK_ENTER){
+            //regen grid
+            gp.seed = rand.nextLong(100000000, 999999999);
+            gp.terrain.genTerrain();
+            //System.out.println("Regenerated");
+        }
 
     }
 }

@@ -10,7 +10,7 @@ public class Tile {
     }
 
     public void setColor(){
-        if(colorVal < 0.1){
+        if(colorVal < 0.2){
             tileColor = Color.blue;
         }
         else if(colorVal < 0.3){
