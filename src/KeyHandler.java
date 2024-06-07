@@ -33,6 +33,18 @@ public class KeyHandler implements KeyListener {
             gp.terrain.genTerrain();
             //System.out.println(gp.terrain.tileSize);
         }
+        if(e.getKeyCode() == KeyEvent.VK_0 && gp.terrain.tileSize != 35){
+            gp.terrain.tileSize = 35;
+            gp.terrain.genTerrain();
+        }
+        if(e.getKeyCode() == KeyEvent.VK_W){
+            Tile.baseVal -= 0.1f;
+            gp.terrain.genTerrain();
+        }
+        if(e.getKeyCode() == KeyEvent.VK_Q){
+            Tile.baseVal += 0.1f;
+            gp.terrain.genTerrain();
+        }
     }
 
     @Override
